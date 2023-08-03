@@ -1,0 +1,83 @@
+.login-background {
+    background: linear-gradient(135deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+    height: 100vh;
+
+    .login-container {
+        background-color: #fff;
+        width: 400px;
+        height: 435px;
+        border-radius: 15px;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        .login-content {
+            padding: 20px 15px;
+
+            .login-text {
+                text-align: center;
+                font-weight: 600;
+                font-size: 24px;
+                padding-top: 10px;
+            }
+
+            .login-input {
+                label {
+                    padding: 0 0 5px;
+                }
+
+                margin: 7px 0;
+            }
+
+            .login-btn {
+                color: #fff;
+                font-size: 18px;
+                width: 100%;
+                height: 30px;
+                margin: 10px 0;
+                border-radius: 10px;
+                border: none;
+                background: linear-gradient(135deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+            }
+
+            .forgot-password {
+                font-size: 12px;
+                margin-left: 10px;
+            }
+
+            .social-login {
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+                gap: 10px;
+
+                .google {
+                    color: #fff;
+                    font-size: 30px;
+                    background-color: rgb(223, 57, 57);
+                    border-radius: 50%;
+                    height: 50px;
+                    width: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .facebook {
+                    color: #fff;
+                    font-size: 30px;
+                    background-color: rgb(41, 133, 207);
+                    border-radius: 50%;
+                    height: 50px;
+                    width: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
