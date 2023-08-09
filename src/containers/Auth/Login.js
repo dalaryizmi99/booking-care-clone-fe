@@ -100,8 +100,8 @@ class Login extends Component {
                         </div>
 
                         <div className='social-login'>
-                            <i class="fab fa-google-plus-g google"></i>
-                            <i class="fab fa-facebook-f facebook"></i>
+                            <i className="fab fa-google-plus-g google"></i>
+                            <i className="fab fa-facebook-f facebook"></i>
                         </div>
                     </div>
 

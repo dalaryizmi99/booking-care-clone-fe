@@ -1,0 +1,51 @@
+.users-container {
+
+    .add-user {
+        .add-user-btn {
+            i {
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+.btn-action {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.modal-user-container {
+    .modal-header {
+        button {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            font-size: 25px;
+        }
+    }
+
+    .modal-user-body {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            width: 49%;
+
+            &.max-width-input {
+                width: 100%;
+            }
+
+            input {
+                border: 1px solid grey;
+                border-radius: 3px;
+                height: 30px;
+            }
+        }
+    }
+
+}
