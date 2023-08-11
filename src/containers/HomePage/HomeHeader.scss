@@ -1,0 +1,179 @@
+.home-header-container {
+    height: 70px;
+    width: 100%;
+    padding: 0 40px;
+
+    .home-header-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+
+        .left-content {
+            width: 20%;
+            display: flex;
+            align-items: center;
+
+            i {
+                font-size: 25px;
+
+                color: grey;
+                cursor: pointer;
+            }
+
+            .header-logo {
+                cursor: pointer;
+                height: 100%;
+                width: 100%;
+                transform: scale(0.5, 0.5);
+                margin-left: -45px;
+
+            }
+        }
+
+        .center-content {
+            width: 55%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .child-center-content {
+                .sub-titles {
+                    font-weight: 400;
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .right-content {
+            width: 25%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            .support {
+                padding-right: 50px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+
+                i {
+                    font-size: 15px;
+                    margin-right: 5px;
+                }
+
+            }
+
+            .language-vi {
+                cursor: pointer;
+
+                &:active {
+                    color: orange;
+                }
+            }
+
+            .language-en {
+                margin: 0 10px;
+                cursor: pointer;
+
+                &:active {
+                    color: orange;
+                }
+            }
+        }
+    }
+
+}
+
+.home-header-banner {
+    background-image: url('../../assets/header-background.jpg');
+    height: 550px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 15px 0;
+    opacity: 0.8;
+
+    .title1 {
+        background-image: linear-gradient(rgba(126, 126, 126, 0.25), rbga(255, 255, 255, 0.1));
+        text-align: center;
+        font-size: 30px;
+        margin-top: 30px;
+        margin-bottom: 5px;
+        text-shadow: 1px 1px 1px #333;
+        color: white;
+    }
+
+    .title2 {
+        text-align: center;
+        font-size: 30px;
+        text-shadow: 1px 1px 1px #333;
+        color: white;
+        margin-bottom: 15px;
+    }
+
+    .search {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 10px;
+        border-radius: 30px;
+        background-color: yellow;
+
+        i {
+            font-size: 18px;
+            margin: 0 5px;
+        }
+
+        input {
+            height: 30px;
+            width: 360px;
+            background: transparent;
+            border: none;
+            outline: none;
+        }
+    }
+
+    .options {
+        display: flex;
+        justify-content: space-around;
+        align-items: end;
+        height: 50%;
+        padding: 0 220px;
+
+        .sub-options {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+            width: 120px;
+
+            .option-icon-child {
+                cursor: pointer;
+                color: #48bce2;
+                font-size: 25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: white;
+                width: 50px;
+                height: 50%;
+                border-radius: 50%;
+            }
+
+            .option-text-child {
+                text-align: center;
+                font-size: 17px;
+                font-weight: 500;
+                height: 50%;
+
+                &:hover {
+                    color: #48bce2;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
