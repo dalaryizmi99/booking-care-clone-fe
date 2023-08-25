@@ -6,6 +6,7 @@ import * as actions from '../../../store/actions';
 import './UserRedux.scss';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
+import TableManageUser from './TableManageUser';
 
 class UserRedux extends Component {
 
@@ -60,6 +61,21 @@ class UserRedux extends Component {
                 position: arrPositions && arrPositions.length > 0 ? arrPositions[0].key : ''
             })
         }
+
+        if (prevProps.users !== this.props.users) {
+            this.setState({
+                email: '',
+                password: '',
+                firstName: '',
+                lastName: '',
+                phoneNumber: '',
+                address: '',
+                gender: '',
+                position: '',
+                role: '',
+                avatar: '',
+            })
+        }
     }
 
     handlePreviewImg = (event) => {
@@ -97,6 +113,7 @@ class UserRedux extends Component {
             roleId: this.state.role,
             positionId: this.state.position,
         })
+
     }
 
     checkValidateInput = () => {
@@ -258,9 +275,15 @@ class UserRedux extends Component {
                                     <FormattedMessage id="manage-user.save" />
                                 </button>
                             </div>
+
+                            <div className='col-12'>
+                                <TableManageUser />
+                            </div>
                         </div>
                     </div>
                 </div>
+
+
 
                 {this.state.isOpen === true &&
                     <Lightbox
@@ -281,7 +304,8 @@ const mapStateToProps = state => {
         genderRedux: state.admin.genders,
         isLoadingGender: state.admin.isLoadingGender,
         roleRedux: state.admin.roles,
-        positionRedux: state.admin.positions
+        positionRedux: state.admin.positions,
+        users: state.admin.users,
     };
 };
 
@@ -290,7 +314,9 @@ const mapDispatchToProps = dispatch => {
         getGenderStart: () => dispatch(actions.fetchGenderStart()),
         getPositionStart: () => dispatch(actions.fetchPositionStart()),
         getRoleStart: () => dispatch(actions.fetchRoleStart()),
-        createNewUser: (data) => dispatch(actions.createNewUser(data))
+        createNewUser: (data) => dispatch(actions.createNewUser(data)),
+        fetchUserRedux: () => dispatch(actions.fetchAllUsersStart())
+
     };
 };
 
