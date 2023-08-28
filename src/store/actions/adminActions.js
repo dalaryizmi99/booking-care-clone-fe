@@ -1,5 +1,5 @@
 import actionTypes from './actionTypes';
-import { getAllCodeService, createNewUserService, getAllUsers, deleteUserService } from '../../services/userService';
+import { getAllCodeService, createNewUserService, getAllUsers, deleteUserService, updateUserDataService } from '../../services/userService';
 import { toast } from 'react-toastify';
 
 //gender
@@ -159,7 +159,7 @@ export const deleteUser = (userId) => {
     }
 }
 
-export const deleteUserSuccess = (data) => ({
+export const deleteUserSuccess = () => ({
     type: actionTypes.DELETE_USER_SUCCESS,
 })
 
@@ -167,3 +167,31 @@ export const deleteUserFailed = () => ({
     type: actionTypes.DELETE_USER_FAILED,
 })
 
+//edit user
+export const editUser = (data) => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await updateUserDataService(data);
+            if (res && res.errCode === 0) {
+                toast.success("Update user success!!!")
+                dispatch(editUserSuccess())
+                dispatch(fetchAllUsersStart())
+            } else {
+                toast.error("Update user fail!!!")
+                dispatch(editUserFailed());
+            }
+        } catch (e) {
+            toast.error("Update user fail!!!")
+            dispatch(editUserFailed());
+            console.log('editUserFailed err', e)
+        }
+    }
+}
+
+export const editUserSuccess = () => ({
+    type: actionTypes.EDIT_USER_SUCCESS,
+})
+
+export const editUserFailed = () => ({
+    type: actionTypes.EDIT_USER_FAILED,
+})

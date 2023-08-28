@@ -50,8 +50,9 @@
         "other": "Other",
         "address": "Address",
         "position": "Position",
-        "roleId": "Role",
+        "role": "Role",
         "image": "image",
-        "save": "Save"
+        "save": "Save user",
+        "edit": "Save changes"
     }
 }
