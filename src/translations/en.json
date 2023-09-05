@@ -12,7 +12,7 @@
         "welcome": "Welcome, "
     },
     "banner": {
-        "title1": "MEDICAL BACKGROUND",
+        "title1": "MEDICAL PLATFORM",
         "title2": "COMPREHENSIVE HEALTH CARE",
         "search-placeholder": "Find a medical specialty",
         "option-text-child-1": "Specialist Examination",
@@ -54,5 +54,9 @@
         "image": "image",
         "save": "Save user",
         "edit": "Save changes"
+    },
+    "homepage": {
+        "out-standing-doctor": "Outstanding Doctor In Week",
+        "more-infor": "More Information"
     }
 }
