@@ -27,9 +27,25 @@
 
             .content-right-desc {
                 padding-top: 10px;
-
             }
 
+        }
+    }
+
+    .schedule-doctor {
+        margin: 0 16%;
+        display: flex;
+        min-height: 250px;
+        padding: 10px 0;
+
+        .content-left {
+            width: 52%;
+        }
+
+        .content-right {
+            //height: 40%;
+            max-width: 48%;
+            width: 100%;
         }
     }
 

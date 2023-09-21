@@ -57,6 +57,14 @@ class Login extends Component {
         }
     }
 
+    handleKeyDown = (event) => {
+        console.log('check keydown: ', event.key)
+        if (event.key === 'Enter' || event.keyCode === 13) {
+            //event.stopPropagation();
+            this.handleLogin();
+        }
+    }
+
     render() {
         return (
             <div className='login-background'>
@@ -70,7 +78,8 @@ class Login extends Component {
                                 className='form-control'
                                 placeholder='Enter your username!'
                                 value={this.state.username}
-                                onChange={(event) => this.handleOnChangeInputUsername(event)} />
+                                onChange={(event) => { this.handleOnChangeInputUsername(event) }}
+                            />
                         </div>
                         <div className='col-12 form-group login-input'>
                             <label>Password: </label>
@@ -78,7 +87,8 @@ class Login extends Component {
                                 className='form-control'
                                 placeholder='Enter your password!'
                                 value={this.state.password}
-                                onChange={(event) => this.handleOnChangeInputPassword(event)} />
+                                onChange={(event) => this.handleOnChangeInputPassword(event)}
+                                onKeyDown={(event) => this.handleKeyDown(event)} />
                         </div>
 
                         <div className='col-12' style={{ color: 'red' }}>
