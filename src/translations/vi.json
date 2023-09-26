@@ -81,6 +81,20 @@
             "price": "Giá khám bệnh",
             "show-button": "Xem chi tiết",
             "hidden-button": "Ẩn thông tin"
+        },
+        "booking-modal": {
+            "title-modal": "Thông tin về lịch khám bệnh",
+            "free-booking": "Miễn phí đặt lịch",
+            "price": "Giá khám: ",
+            "full-name": "Họ và tên",
+            "birth-day": "Năm sinh",
+            "sex": "Giới tính",
+            "phone-number": "Số điện thoại",
+            "email": "Địa chỉ email",
+            "address": "Địa chỉ liên hệ",
+            "reason": "Lý do khám bệnh",
+            "confirm": "Xác nhận",
+            "cancel": "Huỷ"
         }
     },
     "admin": {

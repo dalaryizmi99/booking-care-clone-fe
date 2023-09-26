@@ -81,6 +81,20 @@
             "payment-method": "The hospital has payment in form: ",
             "show-button": "Show more information",
             "hidden-button": "Hidden information"
+        },
+        "booking-modal": {
+            "title-modal": "Information on scheduling medical examinations",
+            "free-booking": "Free Booking",
+            "price": "Price: ",
+            "full-name": "Full Name",
+            "birth-day": "Birthday",
+            "sex": "Sex",
+            "phone-number": "Phone Number",
+            "email": "Email",
+            "address": "Address",
+            "reason": "Reason",
+            "confirm": "Confirm",
+            "cancel": "Cancel"
         }
     },
     "admin": {
