@@ -10,7 +10,8 @@ import * as actions from '../../../../store/actions'
 import { LANGUAGES } from '../../../../utils';
 import Select from 'react-select';
 import { postPatientAppointment } from '../../../../services/userService';
-import { Toast, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
+import moment from 'moment';
 
 class BookingModal extends Component {
 
@@ -95,10 +96,42 @@ class BookingModal extends Component {
         });
     }
 
+    buildTimeBooking = (dataBookingSchedule) => {
+        let { language } = this.props;
+        if (dataBookingSchedule && !_.isEmpty(dataBookingSchedule)) {
+            let time = language === LANGUAGES.VI ?
+                dataBookingSchedule.timeTypeData.valueVi
+                : dataBookingSchedule.timeTypeData.valueEn
+
+            let date = language === LANGUAGES.VI ?
+                moment.unix(+dataBookingSchedule.date / 1000).format('dddd - DD/MM/YYYY')
+                :
+                moment.unix(+dataBookingSchedule.date / 1000).locale('en').format('ddd - MM/DD/YYYY')
+
+            return `${time} - ${date}`
+        }
+        return '';
+    }
+
+    buildDoctorName = (dataBookingSchedule) => {
+        let { language } = this.props;
+        if (dataBookingSchedule && !_.isEmpty(dataBookingSchedule)) {
+            let name = language === LANGUAGES.VI ?
+                `${dataBookingSchedule.doctorData.lastName} ${dataBookingSchedule.doctorData.firstName}`
+                :
+                `${dataBookingSchedule.doctorData.firstName} ${dataBookingSchedule.doctorData.lastName}`
+
+            return `${name}`
+        }
+        return '';
+    }
+
     handleConfirmBooking = async () => {
         //validate input
         //!data.email || !data.doctorId || !data.timeType || !data.date
         let date = new Date(this.state.birthDay).getTime();
+        let timeString = this.buildTimeBooking(this.props.dataBookingSchedule);
+        let doctorName = this.buildDoctorName(this.props.dataBookingSchedule)
 
         let res = await postPatientAppointment({
             fullName: this.state.fullName,
@@ -110,6 +143,9 @@ class BookingModal extends Component {
             seletedGender: this.state.seletedGender.value,
             doctorId: this.state.doctorId,
             timeType: this.state.timeType,
+            language: this.props.language,
+            timeString: timeString,
+            doctorName: doctorName,
         })
 
         if (res && res.errCode === 0) {
