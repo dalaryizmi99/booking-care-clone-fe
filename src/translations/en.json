@@ -60,7 +60,8 @@
     },
     "homepage": {
         "out-standing-doctor": "Outstanding Doctor In Week",
-        "more-infor": "More Information"
+        "more-infor": "More Information",
+        "popular-specialty": "Popular Specialty"
     },
     "manage-schedule": {
         "title": "Quản lý kế hoạch khám bệnh bác sĩ",
@@ -109,7 +110,15 @@
             "clinic-address": "Clinic Address",
             "note": "Note",
             "create-information": "Create Information",
-            "save-information": "Save Information"
+            "save-information": "Save Information",
+            "choose-specialty": "Choose Specialty",
+            "choose-clinic": "Choose Clinic"
+        },
+        "manage-specialty": {
+            "manage-specialty": "Manage specialty",
+            "specialty-name": "Specialty Name",
+            "specialty-image": "Image",
+            "save-btn": "Save"
         }
     }
 }

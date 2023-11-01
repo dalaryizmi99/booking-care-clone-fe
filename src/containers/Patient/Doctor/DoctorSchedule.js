@@ -23,8 +23,11 @@ class DoctorSchedule extends Component {
     async componentDidMount() {
         let { language } = this.props;
         let allDays = this.getArrDays(language);
+        let res = await getScheduleDoctorByDate(this.props.doctorIdFromParent, allDays[0].value)
+
         this.setState({
             allDays: allDays,
+            allAvailableTime: res.data ? res.data : []
         })
     }
 
@@ -35,11 +38,11 @@ class DoctorSchedule extends Component {
             let object = {};
 
             if (language === LANGUAGES.VI) {
-                if (i == 0) {
+                if (i === 0) {
                     object.label = 'Hôm nay - ' + moment(new Date()).add(i, 'days').format('DD/MM');
                 } else object.label = moment(new Date()).add(i, 'days').format('dddd - DD/MM');
             } else {
-                if (i == 0) {
+                if (i === 0) {
                     object.label = 'Today - ' + moment(new Date()).add(i, 'days').locale('en').format('DD/MM');
                 } else object.label = moment(new Date()).add(i, 'days').locale('en').format('ddd - DD/MM');
             }

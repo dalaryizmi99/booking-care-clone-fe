@@ -16,7 +16,6 @@ class About extends Component {
                         <iframe width="100%" height="400px"
                             src="https://www.youtube.com/embed/B_K6z3HiRAs?list=RDB_K6z3HiRAs"
                             title="Joan Baez ~ 500 Miles"
-                            frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowFullScreen>
                         </iframe>

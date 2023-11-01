@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import './BookingModal.scss';
 import { FormattedMessage } from 'react-intl';
-import { Button, Modal, ModalHeader } from 'reactstrap';
+import { Modal } from 'reactstrap';
 import ProfileDoctor from '../ProfileDoctor';
 import _ from 'lodash';
 import DatePicker from '../../../../components/Input/DatePicker';
@@ -44,7 +44,7 @@ class BookingModal extends Component {
                 let object = {};
                 object.label = language === LANGUAGES.VI ? item.valueVi : item.valueEn;
                 object.value = item.keyMap;
-                result.push(object)
+                return result.push(object)
             })
         }
         return result;

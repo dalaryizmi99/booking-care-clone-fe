@@ -56,17 +56,16 @@
         .section-customize {
             .bg-image {
                 width: 330px;
-                height: 150px;
+                height: 170px;
 
                 background-position: center center;
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-color: #eee;
 
-                &.section-specialty {
-                    background-image: url('../../assets/images/co-xuong-khop.jpeg');
-
-                }
+                // &.section-specialty {
+                //     //background-image: url('../../assets/images/co-xuong-khop.jpeg');
+                // }
 
                 &.section-medical-facility {
                     background-image: url('../../assets/images/logo-phong-kham-da-khoa-quoc-te-exson1.jpeg');
