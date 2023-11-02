@@ -1,49 +1,80 @@
 .detail-specialty-container {
     background-color: #EEEEEE;
 
-    .desciption-specialty {
-        border: 1px solid red;
-        height: 200px;
-    }
-
     .detail-specialty-body {
-        margin: 0 16%;
-    }
 
-    .each-doctor {
-        display: flex;
-        width: 100%;
-        min-height: 300px;
-        margin: 15px 0;
-        padding: 10px;
+        .desciption-specialty-container {
+            //background-image: url('../../../assets/images/co-xuong-khop.jpeg');
+            background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1));
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
 
-        background-color: #fff;
-        box-shadow: 0 5px 10px rgba(32, 33, 36, 0.28);
-        border-radius: 8px;
+            .desciption-specialty {
+                padding: 15px 10px;
+                margin: 0 16%;
 
-        .dt-content-left {
-            width: 50%;
-            border-right: 1px solid #eee;
-            padding: 10px;
+                h1,
+                h2,
+                h3 {
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+            }
         }
 
-        .dt-content-right {
-            width: 50%;
-            padding: 10px;
+        .show-doctor-by-location {
+            margin: 0 16%;
+            padding: 10px 0;
 
-            .doctor-schedule {
-                .doctor-schedule-container {
-                    border-right: unset !important;
+            select {
+                height: 40px;
+                padding: 5px 8px;
+                border: 1px solid #ced4da;
+                border-radius: 0.35rem;
+                cursor: pointer;
+            }
+        }
+
+        .each-doctor {
+            margin: 0 16% 15px;
+            display: flex;
+            /* width: 100%; */
+            min-height: 300px;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 5px 10px rgba(32, 33, 36, 0.28);
+            border-radius: 8px;
+
+            .dt-content-left {
+                width: 50%;
+                border-right: 1px solid #eee;
+                padding: 20px;
+
+                .view-detail-doctor {
+                    padding-top: 10px;
+                    padding-left: 5px;
                 }
             }
 
-            .doctor-extra-infor {
-                border-top: 1px solid #ddd;
-                margin-top: 10px;
-                padding-top: 10px;
+            .dt-content-right {
+                width: 50%;
+                padding: 10px 15px;
 
-                .doctor-extra-infor-container {
-                    padding-left: 0 !important;
+                .doctor-schedule {
+                    .doctor-schedule-container {
+                        border-right: unset !important;
+                    }
+                }
+
+                .doctor-extra-infor {
+                    border-top: 1px solid #ddd;
+                    margin-top: 10px;
+                    padding-top: 10px;
+
+                    .doctor-extra-infor-container {
+                        padding-left: 0 !important;
+                    }
                 }
             }
         }

@@ -8,6 +8,7 @@ import NumberFormat from 'react-number-format';
 import _ from 'lodash';
 import moment from 'moment';
 import localization from 'moment/locale/vi';
+import { Link } from 'react-router-dom';
 
 class ProfileDoctor extends Component {
 
@@ -41,7 +42,10 @@ class ProfileDoctor extends Component {
         if (this.props.language !== prevProps.language) {
         }
         if (this.props.doctorId !== prevProps.doctorId) {
-            //this.getInforDoctor(this.props.doctorId)
+            let data = await this.getInforDoctor(this.props.doctorId);
+            this.setState({
+                dataProfile: data,
+            });
         }
     }
 
@@ -69,12 +73,12 @@ class ProfileDoctor extends Component {
 
     render() {
         let { dataProfile } = this.state;
-        let { language, isShowDescDoctor, dataBookingSchedule } = this.props;
+        let { doctorId, language, isShowDescDoctor, dataBookingSchedule, isShowLinkDetail, isShowPrice } = this.props;
 
         let nameVi = '', nameEn = '';
         if (dataProfile && dataProfile.positionData) {
-            nameVi = `${dataProfile.positionData.valueVi}, ${dataProfile.lastName} ${dataProfile.firstName}`;
-            nameEn = `${dataProfile.positionData.valueEn}, ${dataProfile.firstName} ${dataProfile.lastName}`;
+            nameVi = `${dataProfile.positionData.valueVi}, ${dataProfile.firstName} ${dataProfile.lastName}`;
+            nameEn = `${dataProfile.positionData.valueEn}, ${dataProfile.lastName} ${dataProfile.firstName} `;
         }
 
         return (
@@ -102,28 +106,35 @@ class ProfileDoctor extends Component {
                             }
                         </div>
                     </div>
-
-
                 </div>
-                <div className='price'>
-                    <FormattedMessage id='patient.booking-modal.price' />
-                    {dataProfile && dataProfile.Doctor_Infor && language === LANGUAGES.VI
-                        && <NumberFormat
-                            value={dataProfile.Doctor_Infor.priceTypeData.valueVi}
-                            displayType={'text'}
-                            thousandSeparator={true}
-                            suffix={'VNĐ.'}
-                        />
-                    }
-                    {dataProfile && dataProfile.Doctor_Infor && language === LANGUAGES.EN
-                        && <NumberFormat
-                            value={dataProfile.Doctor_Infor.priceTypeData.valueEn}
-                            displayType={'text'}
-                            thousandSeparator={true}
-                            suffix={'USD.'}
-                        />
-                    }
-                </div>
+
+                {isShowLinkDetail === true &&
+                    <div className='view-detail-doctor'>
+                        <Link to={`/detail-doctor/${doctorId}`}>Xem thêm</Link>
+                    </div>
+                }
+
+                {isShowPrice === true &&
+                    <div className='price'>
+                        <FormattedMessage id='patient.booking-modal.price' />
+                        {dataProfile && dataProfile.Doctor_Infor && language === LANGUAGES.VI
+                            && <NumberFormat
+                                value={dataProfile.Doctor_Infor.priceTypeData.valueVi}
+                                displayType={'text'}
+                                thousandSeparator={true}
+                                suffix={'VNĐ.'}
+                            />
+                        }
+                        {dataProfile && dataProfile.Doctor_Infor && language === LANGUAGES.EN
+                            && <NumberFormat
+                                value={dataProfile.Doctor_Infor.priceTypeData.valueEn}
+                                displayType={'text'}
+                                thousandSeparator={true}
+                                suffix={'USD.'}
+                            />
+                        }
+                    </div>
+                }
             </div>
         );
     }
