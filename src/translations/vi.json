@@ -119,6 +119,13 @@
             "specialty-name": "Tên chuyên khoa",
             "specialty-image": "Ảnh chuyên khoa",
             "save-btn": "Lưu"
+        },
+        "manage-clinic": {
+            "manage-clinic": "Quản lý phòng khám",
+            "clinic-name": "Tên phòng khám",
+            "clinic-address": "Địa chỉ phòng khám",
+            "clinic-image": "Ảnh phòng khám",
+            "save-btn": "Lưu"
         }
     }
 }

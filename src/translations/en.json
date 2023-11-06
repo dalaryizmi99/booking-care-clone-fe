@@ -119,6 +119,13 @@
             "specialty-name": "Specialty Name",
             "specialty-image": "Image",
             "save-btn": "Save"
+        },
+        "manage-clinic": {
+            "manage-clinic": "Manage clinic",
+            "clinic-name": "Clinic Name",
+            "clinic-address": "Clinic Address",
+            "clinic-image": "Image",
+            "save-btn": "Save"
         }
     }
 }
