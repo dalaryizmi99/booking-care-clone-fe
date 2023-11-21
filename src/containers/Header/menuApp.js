@@ -54,6 +54,9 @@ export const doctorMenu = [
             { //Quan ly kế hoạch khám bệnh
                 name: 'menu.doctor.manage-schedule', link: '/doctor/manage-schedule'
             },
+            { //Quan ly lich khám bệnh
+                name: 'menu.doctor.manage-patient-booking', link: '/doctor/manage-patient-booking'
+            },
         ]
     }
 ];

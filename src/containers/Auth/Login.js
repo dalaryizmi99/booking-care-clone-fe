@@ -58,7 +58,6 @@ class Login extends Component {
     }
 
     handleKeyDown = (event) => {
-        console.log('check keydown: ', event.key)
         if (event.key === 'Enter' || event.keyCode === 13) {
             //event.stopPropagation();
             this.handleLogin();

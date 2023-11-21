@@ -53,7 +53,7 @@ class Header extends Component {
                 <div className='languages'>
                     <span className='welcome'>
                         <FormattedMessage id="home-header.welcome" />
-                        {userInfo.firstName ? userInfo.firstName : ''}!
+                        {userInfo.firstName ? userInfo.firstName + ' ' + userInfo.lastName : ''}!
                     </span>
                     <span className={language === LANGUAGES.VI ? "language-vi active" : "language-vi"}
                         onClick={() => this.handleChangeLanguage(LANGUAGES.VI)}>

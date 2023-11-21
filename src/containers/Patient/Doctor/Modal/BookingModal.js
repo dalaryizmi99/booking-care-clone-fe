@@ -24,7 +24,7 @@ class BookingModal extends Component {
             address: '',
             reason: '',
             birthDay: '',
-            seletedGender: '',
+            selectedGender: '',
             doctorId: '',
             genders: '',
             timeType: '',
@@ -92,7 +92,7 @@ class BookingModal extends Component {
 
     handleChangeSelectGender = (selectedOption) => {
         this.setState({
-            seletedGender: selectedOption
+            selectedGender: selectedOption
         });
     }
 
@@ -139,8 +139,9 @@ class BookingModal extends Component {
             email: this.state.email,
             address: this.state.address,
             reason: this.state.reason,
-            date: date,
-            seletedGender: this.state.seletedGender.value,
+            date: this.props.dataBookingSchedule.date,
+            birthDay: date,
+            selectedGender: this.state.selectedGender.value,
             doctorId: this.state.doctorId,
             timeType: this.state.timeType,
             language: this.props.language,
@@ -203,7 +204,7 @@ class BookingModal extends Component {
                             <div className='col-3 form-group'>
                                 <label><FormattedMessage id='patient.booking-modal.sex' /></label>
                                 <Select
-                                    value={this.state.seletedGender}
+                                    value={this.state.selectedGender}
                                     onChange={this.handleChangeSelectGender}
                                     options={this.state.genders}
                                 />

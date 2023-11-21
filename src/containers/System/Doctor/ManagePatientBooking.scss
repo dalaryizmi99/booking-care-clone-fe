@@ -1,0 +1,59 @@
+div._loading_overlay_wrapper {
+    position: unset;
+
+    ._loading_overlay_overlay {
+        z-index: 100000;
+    }
+}
+
+.manage-patient-booking-container {
+    .manage-patient-booking-title {
+        font-size: 15px;
+        margin: 10px 0;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .manage-patient-body {
+        margin: 20px 0;
+
+        .table-manage-patient {
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            td,
+            th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+
+            button {
+                border: none;
+                outline: none;
+                cursor: pointer;
+                color: white;
+            }
+
+            .mp-btn-confirm {
+                margin-right: 10px;
+                height: 30px;
+                border-radius: 3px;
+                background: orange;
+            }
+
+            .mp-btn-remedy {
+                height: 30px;
+                border-radius: 3px;
+                background: rgb(101, 196, 255);
+            }
+        }
+    }
+}
